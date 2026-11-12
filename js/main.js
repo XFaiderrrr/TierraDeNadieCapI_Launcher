@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // SISTEMA DE DESCARGA
     // ================================================
 
-    const DOWNLOAD_URL = "";
+    const DOWNLOAD_URL = "https://drive.google.com/file/d/1J76k8QR-DLXY2CJlXE-0byySuyctrVX4/view?usp=sharing";
 
     const downloadButton = document.getElementById(
         "downloadButton"
