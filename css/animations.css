@@ -1,0 +1,938 @@
+
+/* =====================================================
+   TIERRA DE NADIE — GAMING / AMBER EDITION
+   Yellow / Orange / Dark
+   ===================================================== */
+
+:root {
+    --bg: #101114;
+    --panel: #191817;
+    --text: #f0eee8;
+    --muted: #a3a09a;
+
+    --accent: #e99a35;
+    --gold: #ffc45e;
+
+    --neon-purple: #e99a35;
+    --neon-blue: #c76b2b;
+    --neon-cyan: #ffc45e;
+
+    --neon-gradient: linear-gradient(
+        110deg,
+        #f5b942,
+        #e88932,
+        #c65d29
+    );
+}
+
+/* =====================================================
+   BARRA DE PROGRESO
+   ===================================================== */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    z-index: 100;
+
+    background: var(--neon-gradient);
+
+    box-shadow:
+        0 0 10px #f5b942,
+        0 0 20px #e88932;
+
+    transition: width .08s linear;
+}
+
+/* =====================================================
+   PALETA GENERAL
+   ===================================================== */
+
+body {
+    background:
+        radial-gradient(
+            ellipse at 10% 20%,
+            #8d4d1b20,
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 90% 65%,
+            #a34e1b1b,
+            transparent 38%
+        ),
+        var(--bg);
+}
+
+.site-header {
+    background: rgba(16, 17, 20, .90);
+    border-bottom-color: #e8893233;
+
+    box-shadow: 0 8px 35px #0008;
+}
+
+.brand-mark {
+    border-color: var(--accent);
+    color: var(--accent);
+
+    box-shadow:
+        0 0 18px #e8893244,
+        inset 0 0 15px #e8893222;
+}
+
+.brand-name b {
+    color: var(--accent);
+    text-shadow: 0 0 15px #e8893277;
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 14px #ffc45e99;
+}
+
+.main-nav .nav-download {
+    border-color: var(--accent);
+    color: var(--gold);
+
+    box-shadow:
+        0 0 15px #e8893233,
+        inset 0 0 12px #e8893211;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    isolation: isolate;
+}
+
+.hero-art {
+    background:
+        linear-gradient(
+            90deg,
+            #101114 4%,
+            rgba(16, 17, 20, .85) 42%,
+            rgba(16, 17, 20, .18) 100%
+        ),
+        linear-gradient(
+            0deg,
+            #101114 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 75% 45%,
+            #59371f,
+            #282329 45%,
+            #101114 80%
+        );
+
+    transform: translate3d(
+        var(--parallax-x, 0px),
+        var(--parallax-y, 0px),
+        0
+    );
+
+    transition: transform .2s ease-out;
+}
+
+.hero-cover {
+    animation: coverFloat 22s ease-in-out infinite alternate;
+    opacity: .42;
+}
+
+.hero-grid {
+    background-image:
+        linear-gradient(#f5b9420b 1px, transparent 1px),
+        linear-gradient(90deg, #e889320b 1px, transparent 1px);
+
+    animation: gridMove 30s linear infinite;
+}
+
+.hero-vignette {
+    background:
+        radial-gradient(
+            ellipse at 70% 50%,
+            transparent 0,
+            #10111422 48%,
+            #101114 100%
+        );
+}
+
+.hero-glow {
+    animation: glowFloat 9s ease-in-out infinite alternate;
+}
+
+.glow-one {
+    background: #e8893244;
+}
+
+.glow-two {
+    background: #f5b94233;
+    animation-delay: -4s;
+}
+
+.eyebrow,
+.section-kicker {
+    color: var(--gold);
+}
+
+.eyebrow span {
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+h1 em,
+h2 em {
+    background: var(--neon-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    text-shadow: none;
+
+    filter: drop-shadow(0 0 15px #e8893244);
+}
+
+.hero-rule span {
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.hero-index span {
+    color: var(--gold);
+}
+
+.scroll-cue span {
+    background: var(--gold);
+    box-shadow: 0 0 12px var(--gold);
+
+    animation: cuePulse 1.8s ease-in-out infinite;
+}
+
+/* =====================================================
+   BOTONES
+   ===================================================== */
+
+.button {
+    isolation: isolate;
+    border-radius: 3px;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.button-primary {
+    background: var(--neon-gradient);
+    color: #171513;
+
+    box-shadow:
+        0 0 18px #e8893255,
+        0 7px 22px #0006;
+}
+
+.button-primary:hover {
+    background: var(--neon-gradient);
+
+    box-shadow:
+        0 0 20px #f5b94299,
+        0 0 40px #e8893255;
+
+    transform: translateY(-5px) scale(1.025);
+}
+
+.button-ghost:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+
+    box-shadow: 0 0 25px #e8893233;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    top: -50%;
+    left: -120%;
+
+    width: 60%;
+    height: 200%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffffff66,
+        transparent
+    );
+
+    transform: rotate(25deg);
+    transition: left .7s ease;
+}
+
+.button:hover::before {
+    left: 150%;
+}
+
+/* =====================================================
+   INTRODUCCIÓN
+   ===================================================== */
+
+.intro {
+    background:
+        radial-gradient(
+            ellipse at 90% 20%,
+            #8d4d1b22,
+            transparent 45%
+        ),
+        linear-gradient(
+            115deg,
+            #171716,
+            #191817 55%,
+            #211a14
+        );
+}
+
+.intro:before,
+.levels:before,
+.gallery:before {
+    background: linear-gradient(
+        transparent,
+        var(--accent),
+        var(--gold),
+        transparent
+    );
+
+    box-shadow: 0 0 18px var(--accent);
+}
+
+.intro-text strong,
+.text-link {
+    color: var(--gold);
+}
+
+.quote-line {
+    border-color: #e8893233;
+}
+
+.quote-line span {
+    color: var(--accent);
+    text-shadow: 0 0 20px #e8893288;
+}
+
+/* =====================================================
+   TARJETAS DE CARACTERÍSTICAS
+   ===================================================== */
+
+.feature-card {
+    background: linear-gradient(
+        145deg,
+        #24211d,
+        #151513
+    );
+
+    border-color: #e8893229;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.feature-card::before {
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        #e8893233,
+        transparent 55%
+    );
+
+    opacity: .9;
+}
+
+.feature-card:hover {
+    border-color: #e88932bb;
+
+    box-shadow:
+        0 15px 40px #0008,
+        0 0 30px #e8893233;
+}
+
+.feature-icon {
+    color: var(--gold);
+    text-shadow: 0 0 20px #ffc45e99;
+}
+
+.feature-line {
+    width: 45%;
+    background: var(--neon-gradient);
+
+    box-shadow: 0 0 15px var(--accent);
+    transition: width .4s ease;
+}
+
+.feature-card:hover .feature-line {
+    width: 100%;
+}
+
+/* =====================================================
+   NIVELES
+   ===================================================== */
+
+.levels {
+    background:
+        radial-gradient(
+            ellipse at 10% 50%,
+            #8d4d1b22,
+            transparent 50%
+        ),
+        #141413;
+}
+
+.level-list {
+    border-color: #e8893233;
+}
+
+.level-row {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        background .35s ease,
+        padding .35s ease,
+        border-color .35s ease;
+}
+
+.level-row::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: 3px;
+
+    background: var(--neon-gradient);
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    transition: transform .35s ease;
+}
+
+.level-row:hover::before {
+    transform: scaleY(1);
+}
+
+.level-row:hover {
+    background: linear-gradient(
+        90deg,
+        #e889321b,
+        #f5b94209,
+        transparent
+    );
+}
+
+.level-no,
+.level-info small {
+    color: var(--gold);
+}
+
+.level-art {
+    border-color: #e8893255;
+    box-shadow: 0 0 15px #e8893222;
+
+    transform-style: preserve-3d;
+}
+
+.level-art img {
+    will-change: transform;
+}
+
+.level-row:hover .level-art {
+    box-shadow:
+        0 0 15px #e8893266,
+        0 0 30px #f5b94233;
+}
+
+.level-arrow {
+    color: var(--gold);
+}
+
+.level-row:hover .level-arrow {
+    color: #fff;
+    text-shadow: 0 0 15px var(--gold);
+}
+
+/* =====================================================
+   ARSENAL
+   ===================================================== */
+
+.weapon-item {
+    background: linear-gradient(
+        135deg,
+        #24211d,
+        #151513
+    );
+
+    border-color: #e8893233;
+}
+
+.weapon-item:hover {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 20px #e8893233,
+        inset 0 0 20px #f5b94211;
+}
+
+.weapon-item span {
+    color: var(--gold);
+}
+
+.weapon-item::after {
+    background: #e8893233;
+}
+
+.weapon-item:hover::after {
+    background: #ffc45e77;
+}
+
+/* =====================================================
+   GALERÍA
+   ===================================================== */
+
+.gallery {
+    background:
+        radial-gradient(
+            ellipse at 80% 50%,
+            #75401b22,
+            transparent 50%
+        ),
+        #141413;
+}
+
+.gallery-shot {
+    border-color: #e8893244;
+    transform-style: preserve-3d;
+}
+
+.gallery-shot::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    pointer-events: none;
+
+    background: linear-gradient(
+        135deg,
+        #e8893233,
+        transparent 45%,
+        #ffc45e22
+    );
+
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+.gallery-shot:hover::before {
+    opacity: 1;
+}
+
+.gallery-shot:hover {
+    border-color: var(--gold);
+
+    box-shadow:
+        0 0 20px #e8893244,
+        0 0 40px #f5b94222;
+}
+
+.gallery-shot span {
+    transition:
+        transform .3s ease,
+        color .3s ease;
+}
+
+.gallery-shot:hover span {
+    color: var(--gold);
+    transform: translateY(-5px);
+}
+
+/* =====================================================
+   DESCARGA
+   ===================================================== */
+
+.download-panel {
+    background: linear-gradient(
+        110deg,
+        #2b2018,
+        #17191d 72%
+    );
+
+    border: 1px solid #e8893288;
+
+    box-shadow:
+        0 0 35px #e8893222,
+        inset 0 0 55px #f5b94211;
+}
+
+.download-bg {
+    background:
+        radial-gradient(
+            ellipse at 85% 50%,
+            #e8893244,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 60% 100%,
+            #ffc45e22,
+            transparent 45%
+        );
+
+    animation: downloadPulse 7s ease-in-out infinite alternate;
+}
+
+.download-stamp {
+    color: #ffffff0b;
+    -webkit-text-stroke: 1px #e8893255;
+
+    text-shadow: 0 0 35px #e8893244;
+
+    animation: stampFloat 6s ease-in-out infinite;
+}
+
+.download-note {
+    color: var(--gold);
+}
+
+.download-button {
+    animation: buttonGlow 3s ease-in-out infinite;
+}
+
+.requirements {
+    border-color: #e8893233;
+}
+
+.requirements i {
+    background: var(--gold);
+    box-shadow: 0 0 10px var(--gold);
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.site-footer {
+    background:
+        radial-gradient(
+            ellipse at 15% 0%,
+            #e889321b,
+            transparent 40%
+        ),
+        #0d0e11;
+
+    border-top-color: #e8893244;
+}
+
+.team-member {
+    background: linear-gradient(
+        135deg,
+        #24211d,
+        #151513
+    );
+
+    border-color: #e8893222;
+}
+
+.team-member:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 25px #e8893233;
+}
+
+.footer-bottom {
+    border-color: #e8893233;
+}
+
+.footer-bottom > a {
+    color: var(--gold);
+}
+
+.social-links span {
+    transition: color .25s ease;
+}
+
+.team-member:hover .social-links span {
+    color: var(--gold);
+}
+
+/* =====================================================
+   REVEAL AL HACER SCROLL
+   ===================================================== */
+
+.motion-ready .reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    filter: blur(8px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2, .7, .2, 1),
+        filter .8s ease;
+}
+
+.motion-ready .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+.motion-ready .reveal-left {
+    transform: translateX(-50px);
+}
+
+.motion-ready .reveal-right {
+    transform: translateX(50px);
+}
+
+.motion-ready .reveal-left.visible,
+.motion-ready .reveal-right.visible {
+    transform: translateX(0);
+}
+
+.motion-ready .reveal-scale {
+    transform: scale(.88);
+}
+
+.motion-ready .reveal-scale.visible {
+    transform: scale(1);
+}
+
+/* =====================================================
+   TILT 3D
+   ===================================================== */
+
+.tilt-card {
+    transform:
+        perspective(1000px)
+        rotateX(var(--tilt-x, 0deg))
+        rotateY(var(--tilt-y, 0deg))
+        translateY(var(--hover-lift, 0px));
+
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.feature-card.tilt-card:hover,
+.weapon-item.tilt-card:hover,
+.team-member.tilt-card:hover {
+    --hover-lift: -5px;
+}
+
+/* =====================================================
+   ANIMACIONES
+   ===================================================== */
+
+@keyframes coverFloat {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.09);
+    }
+}
+
+@keyframes gridMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 70px 70px;
+    }
+}
+
+@keyframes glowFloat {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: .45;
+    }
+
+    100% {
+        transform: translate(-35px, 25px) scale(1.25);
+        opacity: .8;
+    }
+}
+
+@keyframes cuePulse {
+    0%, 100% {
+        opacity: .4;
+        width: 25px;
+    }
+
+    50% {
+        opacity: 1;
+        width: 45px;
+    }
+}
+
+@keyframes downloadPulse {
+    from {
+        opacity: .6;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes stampFloat {
+    0%, 100% {
+        translate: 0 0;
+        rotate: -9deg;
+    }
+
+    50% {
+        translate: 0 -12px;
+        rotate: -6deg;
+    }
+}
+
+@keyframes buttonGlow {
+    0%, 100% {
+        box-shadow: 0 0 15px #e8893244;
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px #f5b94299,
+            0 0 45px #e8893244;
+    }
+}
+
+/* =====================================================
+   RIPPLE
+   ===================================================== */
+
+.button,
+.nav-download {
+    position: relative;
+    overflow: hidden;
+}
+
+.button-ripple {
+    position: absolute;
+    z-index: 5;
+
+    border-radius: 50%;
+    background: #ffffff55;
+
+    pointer-events: none;
+    transform: scale(0);
+
+    animation: rippleEffect .65s ease-out forwards;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* =====================================================
+   NAVEGACIÓN ACTIVA
+   ===================================================== */
+
+.main-nav a.active-section:not(.nav-download) {
+    color: var(--gold);
+    text-shadow: 0 0 12px #ffc45e88;
+}
+
+.main-nav a.active-section:not(.nav-download)::after {
+    content: "";
+    display: block;
+
+    height: 2px;
+    margin-top: 5px;
+
+    background: var(--neon-gradient);
+    box-shadow: 0 0 10px #e88932;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+    .scroll-progress {
+        height: 2px;
+    }
+}
+
+@media (max-width: 680px) {
+    .hero-grid {
+        background-size: 45px 45px;
+    }
+
+    .hero-glow {
+        filter: blur(65px);
+    }
+
+    .level-row:hover {
+        padding-left: 5px;
+    }
+
+    .download-stamp {
+        opacity: .28;
+    }
+
+    .motion-ready .reveal {
+        transform: translateY(25px);
+    }
+
+    .motion-ready .reveal-left,
+    .motion-ready .reveal-right {
+        transform: translateY(25px);
+    }
+
+    .motion-ready .reveal.visible,
+    .motion-ready .reveal-left.visible,
+    .motion-ready .reveal-right.visible {
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   ACCESIBILIDAD
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .motion-ready .reveal,
+    .motion-ready .reveal-left,
+    .motion-ready .reveal-right,
+    .motion-ready .reveal-scale {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        transition: none;
+    }
+
+    .download-button,
+    .download-bg,
+    .download-stamp {
+        animation: none;
+    }
+
+    .hero-art {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .button-ripple {
+        display: none;
+    }
+}
